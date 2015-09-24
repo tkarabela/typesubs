@@ -1,0 +1,88 @@
+input:invalid {
+    color: red;
+    outline: thin solid red;
+}
+
+input[title="Layer"] {
+    width: 3em;
+}
+
+input[title*="Time"], input[title="Duration"] {
+    width: 6.5em;
+    text-align: center;
+}
+
+div.tab {
+    width: 48%;
+    float: left;
+    margin-right: 1%;
+}
+
+tr.selected {
+    outline: thin solid #FF5BEF;
+}
+
+tr.comment {
+    background: #D8DEF5;
+}
+
+.event-editor form.form-inline {
+    margin-bottom: 5px;
+    display: block;
+}
+
+#editor-textbox {
+    width: 100%;
+}
+
+#main {
+    margin-top: 70px;
+}
+
+.subtitle-table {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    max-height: 500px;
+    cursor: default;
+
+    font: 9pt "Tahoma";
+}
+
+.subtitle-table table {
+    border-spacing: 0;
+    width: 100%;
+
+}
+
+td, th {
+    border-left: 1px solid #BEBEBE;
+    border-top: 1px solid #BEBEBE;
+    padding: 2px 4px;
+    white-space: nowrap;
+}
+
+td.column-number, th.column-number,
+td.column-cps, th.column-cps,
+td.column-start, th.column-start,
+td.column-end, th.column-end,
+td.column-layer, th.column-layer
+{
+    text-align: center;
+}
+
+
+td.column-number {
+    background: #C4ECC9 !important;
+}
+
+th {
+    background: #A5CFE7;
+    font-weight: normal;
+    text-align: left;
+}
+
+tr.selected td {
+    border-left: 1px solid #BEBEBE;
+    border-top: 1px solid transparent;
+    background: #CEFFE7;
+}
