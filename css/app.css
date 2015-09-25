@@ -39,6 +39,10 @@ tr.comment {
     margin-top: 70px;
 }
 
+.noPadding {
+    padding: 0 !important;
+}
+
 .subtitle-table {
     overflow-x: hidden;
     overflow-y: scroll;
@@ -48,7 +52,7 @@ tr.comment {
     font: 9pt "Tahoma";
 }
 
-.subtitle-table table {
+.subtitle-table {
     border-spacing: 0;
     width: 100%;
 

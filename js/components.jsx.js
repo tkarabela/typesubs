@@ -220,9 +220,12 @@
             var fileId = this.props.id;
             var columns = this.props.columns;
             return (
-                <div>
-                    <div>
-                        <ul className="nav navbar-nav">
+                <div className="panel panel-default">
+                    <div className="panel-heading">
+                        <i className="fa fa-file-o"></i>&nbsp; {subs.filename}
+                    </div>
+                        
+                        {/*<ul className="nav navbar-nav">
                             <div className="btn-group" role="group">
                                 <OpenFileButton value="Open" openFile={this.openFile}/>
                                 <a ref="saveLink" className="btn btn-default" href="#" onClick={this.saveFile}><i className="fa fa-save"></i>&nbsp; Save</a>
@@ -232,16 +235,30 @@
                                 <a className="btn btn-default disabled" href="#"><i className="fa fa-clock-o"></i>&nbsp; Shift Times</a>
                             </div>
                         </ul>
+                        */}
+
+                    <div className="panel-body container-fluid">
+                        <div className="row">
+                            <div className="col-md-6">
+                                <EventEditor fileId={fileId} index={subs.selected} event={subs.events[subs.selected]} styles={subs.styles}/>
+                            </div>
+                            <div className="col-md-4"></div>
+                            <div className="col-md-2">
+                                <ul className="nav nav-pills nav-stacked">
+                                    <li role="presentation"><OpenFileButton value="Open" openFile={this.openFile}/></li>
+                                    <li role="presentation"><a className="btn btn-default" ref="saveLink" href="#" onClick={this.saveFile}><i className="fa fa-save"></i>&nbsp; Save</a></li>
+                                    <li role="presentation"><a className="btn btn-default disabled" href="#"><i className="fa fa-clock-o"></i>&nbsp; Shift Times</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <br/>
-                    <br/>
-                    <EventEditor fileId={fileId} index={subs.selected} event={subs.events[subs.selected]} styles={subs.styles}/>
-                    <div ref="subtitleTable" className="subtitle-table"><table>
+                    
+                    <table ref="subtitleTable" className="subtitle-table">
                         <tr>
                             {columns.map(function(c){return <th className={"column-"+c}>{COLUMN_NAMES[c]}</th>;})}
                         </tr>
                         {subs.events.map(function(e, i){return <Event key={i} columns={columns} fileId={fileId} fields={e} index={i} ref={"event-" + i} selected={i == subs.selected} />;})}
-                    </table></div>
+                    </table>
                 </div>
             );
         }
